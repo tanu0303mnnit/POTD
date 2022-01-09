@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int t;
+    scanf("%d",&t);
+    while(t>0)
+    {
+        int n,m;
+        scanf("%d %d",&n,&m);
+        int a[n];
+         for(int i=0;i<n;i++)
+           {
+             scanf("%d",&a[i]);
+             a[i]=a[i]%m;
+         }
+  int d,u=0,c;
+  d=n;
+  for(int i=0;i<n;i++)
+  {
+      c=0;
+      for(int j=i+1;j<n;j++)
+      {
+       if(a[i]==a[j])
+       c++;
+      }
+      d=d-c;
+     
+ }
+  printf("%d",d);
+ for(int i=0;i<n;i++)
+    {
+        c=0;
+        for(int j=0;j<n;j++)
+        {
+            if(a[i]==a[j])
+                c++;
+        }
+        if(c==1)
+            u++;
+    }
+        printf("\n%d",u);
+        printf("\n");
+  t--;
+    }
+        return 0;
+}
